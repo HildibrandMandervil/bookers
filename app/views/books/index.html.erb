@@ -1,0 +1,38 @@
+<div class="new-all">
+<h1>Bookes</h1>
+<% @books.each do|book|%>
+ <div class="index-title">
+  <h4 class="title">title</h4>
+  <h4 class="body">body</h4>
+ </div>
+ <div class="book-comment">
+  <span class="book-title"><%=book.title %></span>
+
+   <span class="book-body"><%=book.body %></span>
+   <%= link_to "削除", book_path(book.id), method: :delete %>
+
+
+
+
+
+
+
+
+<%end%>
+ </div>
+
+<h4>New book</h4>
+
+
+
+<%= form_with model:@book do |f| %>
+ <p>title</p>
+  <%= f.text_field:title %>
+
+ <p>body</p>
+  <%= f.text_area:body %>
+
+<%= f.submit'create Book' %>
+
+<%end%>
+</div>
