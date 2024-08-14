@@ -1,38 +1,52 @@
-<div class="new-all">
-<h1>Bookes</h1>
-<% @books.each do|book|%>
- <div class="index-title">
-  <h4 class="title">title</h4>
-  <h4 class="body">body</h4>
- </div>
- <div class="book-comment">
-  <span class="book-title"><%=book.title %></span>
-
-   <span class="book-body"><%=book.body %></span>
-   <%= link_to "削除", book_path(book.id), method: :delete %>
-
-
-
-
-
-
-
-
+<div>
+ <%=flash[:notice]%>
+</div>
+<% if @book.errors.any? %>
+ <%=@book.errors.count %>errors prohibited this book from being saved:
+  <ul>
+   <% @book.errors.full_messages.each do |message| %>
+  <li><%=message %></li>
+  </ul>
+ <%end%>
 <%end%>
- </div>
+<h1 class="index-title">Bookes</h1>
+  <table>
+   <thead>
+    <tr>
+     <th>Title</th>
+     <th>Body</th>
+     <th colspan="3"></th>
+    </tr>
+ </thead>
+  <tbody>
+   <% @books.each do|book|%>
+    <tr>
+     <td><%=book.title %></td>
+     <td><%=book.body %></td>
+     <td><%=link_to "show", book_path(book.id) %></td>
+     <td><%=link_to "edit", edit_book_path(book.id) %></td>
+     <td><%=link_to "Destroy", book_path(book.id), method: :delete ,"data-confirm" => "Are you sure you want to delete it？" %></td>
+    </tr>
+   <%end%>
+  </tbody>
+ </table>
 
-<h4>New book</h4>
-
-
-
-<%= form_with model:@book do |f| %>
- <p>title</p>
+<div class="Newbook">
+ <h4>New book</h4>
+  <%= form_with model:@book do |f| %>
+   <div class="field">
+    <label for="book_text">Title</label>
+   </div>
   <%= f.text_field:title %>
 
- <p>body</p>
-  <%= f.text_area:body %>
+  <div class="field">
+   <label for="book_body">Body</label>
+  </div>
+   <%= f.text_area:body %>
 
-<%= f.submit'create Book' %>
+ <div class=submit>
+  <%= f.submit'Create Book' %>
+ </div>
 
-<%end%>
+ <%end%>
 </div>

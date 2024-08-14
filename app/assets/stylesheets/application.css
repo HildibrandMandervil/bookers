@@ -21,7 +21,7 @@
 
 }
 
-.top {
+.all_body{
   font-size: 13px;
   margin:33px;
   line-height: 18px;
@@ -30,24 +30,9 @@
   display: block;
   font-family: verdana, arial, helvetica, sans-serif;
 }
-
-
-.top-p{
-  margin:33px;
-}
-
 .top-link{
   margin:33px;
 }
-
-.book-comment{
-  display:flex;
-}
-
-.index-title{
-  display: flex;
-}
-
 .title{
   width: 192px;
   text-align: center;
@@ -56,17 +41,51 @@
 .body {
   width: 400px;
   text-align: center;
+
+}
+.show_body{
+  margin:33px;
+}
+
+th{
+  text-align: center;
+  font-weight: bold;
+}
+
+p{
+  margin:33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: 18px;
+  background-color: #fff;
+  color: #333;
+  font-size: 13px;
+}
+
+
+div{
+  display: block;
+
+}
+
+.edit_title{
+ margin-bottom:33px;
+}
+
+.submit{
+  display: block;
+  
+  margin-top: 33px;
   
 }
 
-.book-title{
-  width: 192px
+table{
+  margin: 33px;
 }
 
-.book-body{
-  width: 400px;
+.index-title{
+  margin: 33px;
 }
 
-.new-all{
-  margin:33px;
+.Newbook{
+  margin: 33px;
 }
